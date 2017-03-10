@@ -1,0 +1,116 @@
+---
+title: An Analysis of the Leiterman Case
+author: Jeffrey N. Rouder, Ph.D.
+output:
+  pdf_document: default
+---
+
+# First Pass (without Mr. Ruelas)
+
+We consider the following two hypotheses:
+
+* $H_1$: Leiterman's DNA was deposited on Mixer's sample at the crime scene in 1969
+
+* $H_2$: Leiterman's DNA was deposited on Mixer's sample at the lab in the six month window between October 24th, 2001 and April, 2002.
+
+We wish to compute the odds of guilt conditional on the DNA match, denoted $M$.  By the Law of Conditional Probability:
+
+\[
+\frac{Pr(H_1 |M)}{Pr({H_2}|M)}=\frac{Pr(M|H_1)}{Pr(M|H_2)}\times\frac{Pr(H_1)}{Pr(H_2)}
+\]
+
+Now, we make the following assertions
+
+1. $Pr(M|H_1)$.   Under guilt, we assume that the probability of a match is .5 due to DNA degradation in the intervening 30 years.  $Pr(M|H_1)=.5$
+
+2. $Pr(M|H_2)$.  If there was cross-contamination, a match was inevitable.  DNA testing is that good.  $Pr(M|H_2)=1$
+
+3. $Pr(H_1)$.  We compute the prior probability that Mr. Leiterman is guilty by noting that he is one of many Detroit metro area residents of adult age in 1969.    We assume there were 2.5 million people similar such people that are potential suspects.  Hence, the prior probability for Mr. Leiterman is the reciprocal of this number.  $Pr(H_1)=.0000004$
+
+4. $Pr(H_2)$.  The event $H_2$ not only supposes a cross-contamination, but that it is with Mr. Leiterman's sample.  The probability of a cross-contamination event is $1/1500$, and the probability that it is Mr. Leiterman's sample is $1/n$, where $n$ is the number of samples processed in the lab in the six month window that Ms. Mixer's sample was in the lab. We assume that $n=6000$. Taking the product yields $Pr(H_2)= .00000011$
+
+With these values:
+\[
+\frac{Pr(H_1 |M)}{Pr({H_2}|M)} =\frac{.5\times.0000004}{1\times.00000011}=1.8
+\]
+
+These odds, 1.8-to-1, correspond to a probability of guilt of .64.
+
+# Second Pass (with Mr. Ruelas)
+
+Now we consider Mr. Ruelas as best we can.
+
+Consider the following hypotheses:
+
+* $H_1$: Both Leiterman's and Ruelas DNA was deposited on Mixer's sample at the crime scene in 1969
+
+* $H_2$: Leiterman's DNA was deposited on Mixer's sample at the crime scene in 1969; Ruelas was deposited in the lab in the 2001-2002 window
+
+* $H_3$: Ruelas DNA was deposited on Mixer's sample at the crime scene in 1969; Leiterman's DNA was deposited in the lab in the 2001-2002 window
+
+* $H_4$: Both Leiterman's and Ruelas' DNA was deposited in the lab i nthe 2001-2002 window
+
+I propose we eliminate $H_1$ and $H_3$.  The notion that an unaccompanied four-year-old deposited DNA at a murder scene is so unlikely that I cannot even fathom any estimate but zero.  Common sense stretched to any degree demands we eliminate it.   Under any scenario, these hypotheses will be so small relative to the other two as to be negliable.
+
+So, we wish to compute
+\[
+\frac{Pr(H_2 |M^*)}{Pr({H_4}|M^*)}=\frac{Pr(M^*|H_2)}{Pr(M^*|H_4)}\times\frac{Pr(H_2)}{Pr(H_4)},
+\]
+where $M^*$ is the event that both Ruelas and Leiterman match DNA samples from the Mixer crime scene.
+
+1. $Pr(M^*|H_2)$.   Under Leiterman's guilt, we assume that the probability of a match is .5 due to DNA degradation in the intervening 30 years.  The probability of Ruelas' match under cross-contamination is assumed to be 1.0.  Hence, given the independence of the events,  $Pr(M^*|H_2)=.5$
+
+2. $Pr(M^*|H_4)$.  If there was cross-contamination for both, a match was inevitable. $Pr(M|H_4)=1$
+
+3. $Pr(H_2)$.  We compute the prior probability that Mr. Leiterman is guilty and that Mr. Ruelas has matched by cross-contamination.  Using the previous values and noting independence: $Pr(H_2)=  .0000004. \times .00000011 = 4.4 \times 10^{-14}$.
+
+4. $Pr(H_4)$.  The event $H_2$ not only supposes a cross-contamination, but that it includes both Mr. Leiterman's and Mr. Ruelas sample.  The probability of a cross-contamination event is $1/1500$, and the probability that these two are the two contaminated is about $1/n^2$.  Taking the previous values, $Pr(H_4)=1.85 \times 10^{-11}$.
+
+
+With these values:
+\[
+\frac{Pr(H_1 |M)}{Pr({H_2}|M)} =\frac{.5\times 4.4 \times 10^{-14}}{1.85  \times 10^{-11}}=0.00119
+\]
+
+These odds, .00119-to-1, correspond to a probability of guilt of .0012.
+
+
+
+# Third Pass (without Ruelas, with fluids)
+
+The critical crime scene data was Mixer's pantyhose.  A spot on the pantyhose matched the DNA of Leiterman.  The analysis revealed that the fluid from Mr. Leiterman was not blood and was not semen, the usual fluids found in these analyses.  It was not identified, but could have been saliva.  Mr. Leiterman's DNA sample from his prior conviction was saliva (mouth swab).  Had the material been blood or semen, we could be sure it was not cross contaminated.  This evidence should be factored in.
+
+
+We consider the following two hypotheses:
+
+* $H_1$: Leiterman's DNA was deposited on Mixer's sample at the crime scene in 1969.  The fluid was neither blood nor semen.
+
+* $H_2$: Leiterman's DNA was deposited on Mixer's sample at the lab in the six month window between October 24th, 2001 and April, 2002.  The fluid was neither blood nor semen.
+
+We wish to compute the odds of guilt conditional on the DNA match, denoted $M$.  By the Law of Conditional Probability:
+
+\[
+\frac{Pr(H_1 |M)}{Pr({H_2}|M)}=\frac{Pr(M|H_1)}{Pr(M|H_2)}\times\frac{Pr(H_1)}{Pr(H_2)}
+\]
+
+Now, we make the following assertions
+
+1. $Pr(M|H_1)$.   Under guilt, we assume that the probability of a match is .5 due to DNA degradation in the intervening 30 years.  $Pr(M|H_1)=.5$
+
+2. $Pr(M|H_2)$.  If there was cross-contamination, a match was inevitable.  DNA testing is that good.  $Pr(M|H_2)=1$
+
+3. $Pr(H_1)$.  H_1 is comprised of the intersection of two events: Leiderman deposited DNA in 1969 and that the DNA was not from blood or semen.  We take the former at $.0000004$ and the later at $1/3$. This value of $1/3$ is surely too high; we suspect that most crime-scene DNA fluids are blood or semen.  With these values, multiplying yields, $Pr(H_1)=.00000013$
+
+4. $Pr(H_2)$.  We take the previous value.  If there was cross contamination, it could only come from saliva. $Pr(H_2)= .00000011$
+
+With these values:
+\[
+\frac{Pr(H_1 |M)}{Pr({H_2}|M)} =\frac{.5\times.00000013}{1\times.00000011}=.61
+\]
+
+These odds, .61-to-1, correspond to a probability of guilt of .38.
+
+
+
+# Fourth Pass (with Ruelas, with fluids)
+We can include fluids information and the presence of Mr. Ruelas match.  The resulting odds are .00040, and the probability of guilt is about the same, .0004.
